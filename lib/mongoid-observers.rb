@@ -10,6 +10,6 @@ require "mongoid/observer"
 module Mongoid
   include ActiveModel::Observing
 
-  delegate(*ActiveModel::Observing::ClassMethods.public_instance_methods(false) <<
+  ActiveSupport::delegate(*ActiveModel::Observing::ClassMethods.public_instance_methods(false) <<
     { to: Config })
 end
